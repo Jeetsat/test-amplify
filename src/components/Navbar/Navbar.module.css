@@ -1,0 +1,105 @@
+@import "../../vars.css";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  /* background: linear-gradient(135deg, rgba(25, 55, 109, 0.8), rgba(0, 0, 0, 0.8)); */
+  background-color: black;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-roboto);
+  transition: color 0.3s ease-in-out;
+}
+
+.title:hover {
+  color: var(--color-primary);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menuItems {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.menuItems a {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-family: var(--font-roboto);
+  transition: color 0.3s ease-in-out;
+}
+
+.menuItems a:hover {
+  color: var(--color-primary);
+}
+
+.menuBtn {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  z-index: 11;
+}
+
+.menuBtn img {
+  width: 100%;
+  height: auto;
+  filter: brightness(1.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menuBtn:hover img {
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 830px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .menuItems {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background: linear-gradient(
+      135deg,
+      rgba(25, 55, 109, 0.9),
+      rgba(0, 0, 0, 0.8)
+    ); */
+
+    background-color: black;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .menuOpen {
+    display: flex;
+  }
+
+  .menuItems a {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+}

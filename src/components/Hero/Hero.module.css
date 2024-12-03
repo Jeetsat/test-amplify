@@ -1,0 +1,152 @@
+@import "../../vars.css";
+
+/* Container for the Hero Section */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 5% 10%;
+  /* background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); */
+  background-color: black;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  z-index: 1;
+  max-width: 50%;
+}
+
+/* Hero Title */
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  font-family: var(--font-roboto);
+  background: linear-gradient(90deg, #ffffff 0%, #ffe259 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Hero Description */
+.description {
+  font-size: 1.8rem;
+  font-family: var(--font-roboto);
+  margin-bottom: 40px;
+  line-height: 1.5;
+  animation: fadeIn 1.8s ease-out;
+}
+
+/* Contact Button */
+.contactBtn {
+  text-decoration: none;
+  background-color: #ff8a00;
+  color: white;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  box-shadow: 0 8px 15px rgba(255, 138, 0, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeIn 2s ease-out;
+}
+
+.contactBtn:hover {
+  background-color: #ff6700;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 103, 0, 0.5);
+}
+
+/* Hero Image */
+.heroImg {
+  width: 40%;
+  animation: floating 3s ease-in-out infinite;
+  z-index: 1;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+/* Blur Effects for Background */
+.topBlur,
+.bottomBlur {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.topBlur {
+  width: 60vw;
+  height: 60vw;
+  top: -20%;
+  left: -20%;
+}
+
+.bottomBlur {
+  width: 80vw;
+  height: 60vw;
+  bottom: -20%;
+  right: -20%;
+}
+
+/* Keyframes for Floating Effect */
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+/* Keyframes for Fade-in Effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for Mobile Screens */
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column-reverse;
+    padding: 10% 5%;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .heroImg {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .contactBtn {
+    font-size: 1.2rem;
+  }
+}

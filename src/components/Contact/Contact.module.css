@@ -1,0 +1,92 @@
+@import "../../vars.css"; 
+
+.container {
+  color: var(--color-text);
+  margin-top: 120px; 
+  background-color: var(--color-secondary); 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; 
+  align-items: center; 
+  width: 100%; 
+  padding: 60px 8%; 
+  gap: 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.text h2 {
+  font-size: 80px; /* Large size for emphasis */
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--color-primary); /* Use the primary color for the heading */
+  line-height: 1.2; /* Better spacing for readability */
+}
+
+.text p {
+  font-size: 32px; /* Slightly smaller font size for the paragraph */
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5; /* More space between lines for readability */
+  color: var(--color-text);
+  margin-top: 15px; /* Spacing from the heading */
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  gap: 30px; /* Increased gap for visual breathing room */
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.link a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover transition */
+}
+
+.link:hover {
+  transform: translateX(5px); /* Subtle hover effect for the link container */
+}
+
+.link a:hover {
+  color: var(--color-primary); /* Change link color on hover */
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    gap: 20px; /* Reduced gap for a better mobile layout */
+    padding: 40px 5%; /* Reduced padding for mobile */
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center align text on smaller screens */
+  }
+
+  .text h2 {
+    font-size: 50px; /* Reduced heading size on mobile */
+  }
+
+  .text p {
+    font-size: 24px; /* Reduced paragraph size for better readability */
+  }
+
+  .links {
+    align-items: center; /* Center align links on mobile */
+  }
+}
